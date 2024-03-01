@@ -138,7 +138,11 @@ class _AddPhotoPageState extends State<AddPhotoPage> {
                                               recordedImageString =
                                                   recordedImage.path;
                                               PhotoItem item = PhotoItem();
-                                              item.id = widget.id;
+                                              if (widget.isEditMode) {
+                                                item.id = currentBrokenItem.id;
+                                              } else {
+                                                item.id = widget.id;
+                                              }
                                               item.photo = recordedImage.path;
                                               recordedImages.add(item);
 
@@ -163,7 +167,12 @@ class _AddPhotoPageState extends State<AddPhotoPage> {
                                             if (pickedFile != null) {
                                               _image = File(pickedFile.path);
                                               PhotoItem item = PhotoItem();
-                                              item.id = widget.id;
+                                              if (widget.isEditMode) {
+                                                item.id = currentBrokenItem.id;
+                                              } else {
+                                                item.id = widget.id;
+                                              }
+
                                               item.photo = _image.path;
                                               recordedImages.add(item);
                                             }

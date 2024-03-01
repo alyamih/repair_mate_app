@@ -301,6 +301,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
             child: InkWell(
               onTap: () {
+                currentBrokenItem = BrokenItem();
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
                       builder: (BuildContext context) =>
