@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:repair_mate_app/model/broken_item.dart';
+import 'package:repair_mate_app/model/news_item.dart';
 import 'package:repair_mate_app/model/user.dart';
 import 'package:repair_mate_app/pages/add_broken_item_page.dart';
 import 'package:repair_mate_app/pages/add_expenses_page.dart';
 import 'package:repair_mate_app/pages/add_photo_page.dart';
 import 'package:repair_mate_app/pages/all_broken_items_page.dart';
 import 'package:repair_mate_app/pages/description_page.dart';
+import 'package:repair_mate_app/pages/news_page.dart';
 import 'package:repair_mate_app/pages/settings_page.dart';
 
 UserItem user = UserItem(repairedItemsCount: 0);
@@ -36,27 +38,54 @@ class _HomePageState extends State<HomePage> {
             child: Column(children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 60, 16, 27),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                          builder: (BuildContext context) =>
-                              const SettingsPage()),
-                    );
-                  },
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Settings',
-                        style: TextStyle(
-                            fontFamily: 'SF Pro Text',
-                            color: Color(0xFF0075FF),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      )
-                    ],
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const SettingsPage()),
+                        );
+                      },
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Settings',
+                            style: TextStyle(
+                                fontFamily: 'SF Pro Text',
+                                color: Color(0xFF0075FF),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const NewsPage()),
+                        );
+                      },
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'News',
+                            style: TextStyle(
+                                fontFamily: 'SF Pro Text',
+                                color: Color(0xFF0075FF),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const Padding(
