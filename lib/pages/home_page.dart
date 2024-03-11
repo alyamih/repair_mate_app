@@ -8,6 +8,7 @@ import 'package:repair_mate_app/pages/add_photo_page.dart';
 import 'package:repair_mate_app/pages/all_broken_items_page.dart';
 import 'package:repair_mate_app/pages/description_page.dart';
 import 'package:repair_mate_app/pages/news_page.dart';
+import 'package:repair_mate_app/pages/quiz_game_page.dart';
 import 'package:repair_mate_app/pages/settings_page.dart';
 
 UserItem user = UserItem(repairedItemsCount: 0);
@@ -54,6 +55,28 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           Text(
                             'Settings',
+                            style: TextStyle(
+                                fontFamily: 'SF Pro Text',
+                                color: Color(0xFF0075FF),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const QuizGamePage()),
+                        );
+                      },
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Quiz',
                             style: TextStyle(
                                 fontFamily: 'SF Pro Text',
                                 color: Color(0xFF0075FF),
